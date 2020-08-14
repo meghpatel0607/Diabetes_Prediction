@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes_Prediction</title>
+    <style>
+        body {
+        font-family: Aerial, Helvetica, sans-serif;
+        }
+
+        * {
+        box-sizing: border-box;
+        }
+        /* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div style="text-align:center">
+    </div>
+         <h1> Diabetes Prediction</h1>
+    <p> Please fill up the form </p>
+</div>
+<div class = "row">
+    <div class = "column">
+        <img src="https://image.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg" style="width:100%">
+    </div>
+    <div class="column">
+        <form action="/predict" method="POST">
+            <input type="text" name="pregnancies" placeholder="Pregnancies (0-17)" required="required">
+            <br>
+            <input type="text" name="glucose" placeholder="Glucose (0-199)" required="required">
+            <br>
+            <input type="text" name="bloodPressure" placeholder="Blood Pressure (mm Hg) (0-122)" required="required">
+            <br>
+            <input type="text" name="SkinThickness" placeholder="Skin Thickness (mm) (0-99)" required="required">
+            <br>
+            <input type="text" name="Insulin" placeholder="Insulin (mu U/ml) (0-846)" required="required">
+            <br>
+            <input type="text" name="BMI" placeholder="BMI (0-67)" required="required">
+            <br>
+            <input type="text" name="Diabetes Pedigree Function" placeholder="Diabetes Pedigree Function (0-2.42)"
+                required="required">
+            <br>
+            <input type="text" name="Age" placeholder="Age (0-81)" required="required">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-outline-warning">Predict</button>
+
+
+        </form>
+
+        <br>
+        <br>
+
+        <h3><strong>{{ prediction_text }}</strong></h3>
+
+        <br>
+        <br>
+
+        <p>©2020 Megh Patel</p>
+
+
+    </div>
+</div>
+
+</body>
+</html>
